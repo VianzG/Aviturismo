@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "Booking": {
+      "title": "Booking",
+      "description": "A user's booking request which may win a prize.",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "destination": { "type": "string" },
+        "prizeTier": { "type": ["string", "null"] },
+        "createdAt": { "type": "string", "format": "timestamp" }
+      },
+      "required": ["fullName", "email", "destination", "prizeTier", "createdAt"]
+    }
+  },
+  "firestore": {
+    "bookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/Booking" },
+      "description": "User booking requests."
+    }
+  }
+}

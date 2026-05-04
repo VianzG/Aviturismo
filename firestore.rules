@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+
+    function isValidBooking(data) {
+      return data.keys().hasAll(['fullName', 'email', 'destination', 'prizeTier', 'createdAt']) &&
+        data.keys().size() == 5 &&
+        data.fullName is string && data.fullName.size() <= 100 && data.fullName.size() > 0 &&
+        data.email is string && data.email.size() <= 100 && data.email.size() > 0 &&
+        data.destination is string && data.destination.size() <= 50 && data.destination.size() > 0 &&
+        (data.prizeTier is string || data.prizeTier == null) &&
+        data.createdAt == request.time;
+    }
+
+    match /bookings/{bookingId} {
+      allow create: if isValidId(bookingId) && isValidBooking(incoming());
+      allow get: if isValidId(bookingId);
+      allow update, delete, list: if false;
+    }
+  }
+}

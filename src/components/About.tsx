@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import imgAbout from '../images/About/Guía avistando aves.jpg';
 
 export default function About() {
   return (
@@ -14,7 +15,7 @@ export default function About() {
         >
           <div className="aspect-[3/4] overflow-hidden bg-pine-green rounded-[24px]">
             <img 
-              src="https://images.unsplash.com/photo-1590402241513-ee4e7ce21c27?q=80&w=2574&auto=format&fit=crop" 
+              src={imgAbout} 
               alt="Guía avistando aves" 
               className="w-full h-full object-cover filter grayscale-[30%] opacity-90 transition-transform duration-[2s] hover:scale-105"
             />

@@ -17,7 +17,7 @@ export default function Hero() {
       ref={ref} 
       className="relative min-h-screen w-full overflow-hidden bg-sun-cream flex flex-col md:flex-row font-sans text-charcoal-gray"
     >
-      {/* PANEL VISUAL (Izquierda) - Ocupa 55% en desktop mediante el S-Curve */}
+      {/* PANEL VISUAL (Izquierda) - Ocupa 50% en desktop mediante el S-Curve */}
       <div className="relative w-full h-[60vh] md:h-full md:w-[60vw] md:absolute md:left-0 md:top-0 overflow-hidden">
         <motion.div 
           style={{ y: backgroundY }}
@@ -38,16 +38,16 @@ export default function Hero() {
       {/* Rellena la parte derecha con el color crema (sun-cream) creando una máscara suave sobre la imagen */}
       <div className="absolute inset-0 z-10 pointer-events-none hidden md:block">
         <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-          {/* S-curve logic: Starts at x=55, curves right to 65, curves left to 45, ends at 55 */}
-          <path d="M 55,0 C 65,30 45,70 55,100 L 100,100 L 100,0 Z" className="fill-sun-cream" />
+          {/* S-curve logic: Starts at x=50, curves right to 60, curves left to 40, ends at 50 */}
+          <path d="M 50,0 C 60,30 40,70 50,100 L 100,100 L 100,0 Z" className="fill-sun-cream" />
         </svg>
       </div>
 
       {/* PANEL DE CONTENIDO (Derecha) - Apilado abajo en mobile, absolute a la derecha en desktop */}
-      <div className="relative z-20 w-full md:w-[45vw] md:absolute md:right-0 md:top-0 md:h-full flex flex-col pt-16 pb-20 px-10 md:pt-10 md:pb-16 bg-sun-cream md:bg-transparent">
+      <div className="relative z-20 w-full md:w-[50vw] md:absolute md:right-0 md:top-0 md:h-full flex flex-col justify-center px-8 py-20 md:px-12 lg:px-20 xl:px-24 bg-sun-cream md:bg-transparent">
         
         {/* Menú de Navegación dedicado para el Hero (Desktop) */}
-        <div className="hidden md:flex justify-end gap-8 items-center text-[10px] uppercase tracking-[0.2em] font-semibold text-charcoal-gray/50 mb-auto">
+        <div className="hidden md:flex absolute top-10 right-10 lg:right-16 gap-8 items-center text-[10px] xl:text-xs uppercase tracking-[0.2em] font-semibold text-charcoal-gray/50 z-30">
           <a href="#expediciones" className="hover:text-pine-green transition-colors">Expediciones</a>
           <a href="#galeria" className="hover:text-pine-green transition-colors">Galería</a>
           <a href="#booking" className="px-6 py-3 bg-moss-gold/90 text-white rounded-full hover:bg-pine-green transition-all shadow-md">
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
 
         {/* Cita rápida mobile (menú global maneja mobile) */}
-        <div className="md:hidden flex justify-end mb-12">
+        <div className="md:hidden flex justify-center mb-12">
           <a href="#booking" className="px-6 py-3 bg-moss-gold/90 text-[10px] uppercase tracking-[0.2em] font-semibold text-white rounded-full shadow-md">
             Reservar Ahora
           </a>
@@ -65,13 +65,13 @@ export default function Hero() {
         {/* Bloque de Texto Central */}
         <motion.div 
           style={{ y: textY }}
-          className="flex flex-col items-start w-full max-w-lg mx-auto md:mx-0 md:pl-10 mt-auto md:mt-20"
+          className="flex flex-col items-center md:items-start text-center md:text-left w-full max-w-lg mx-auto md:mx-0 md:ml-[5%] lg:ml-[10%]"
         >
           <motion.h1 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl lg:text-[4rem] font-bold tracking-[0.08em] leading-[1.05] text-charcoal-gray mb-6 font-sans uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.08em] leading-[1.1] text-charcoal-gray mb-6 font-sans uppercase"
           >
             Aviturismo <br className="hidden md:block" /> Guatemala
           </motion.h1>
@@ -80,7 +80,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-charcoal-gray/70 text-lg lg:text-xl font-serif italic mb-16 leading-relaxed max-w-sm"
+            className="text-charcoal-gray/70 text-base md:text-lg lg:text-xl font-serif italic mb-10 leading-relaxed max-w-sm"
           >
             Una inmersión profunda en la riqueza biológica de Mesoamérica, tejida con elegancia y precisión.
           </motion.p>
@@ -90,7 +90,7 @@ export default function Hero() {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 1, delay: 0.6 }}
-             className="w-48 md:w-64 xl:w-80 mt-auto md:mt-24 mb-4"
+             className="w-56 md:w-72 lg:w-80 xl:w-[350px] mt-4"
           >
              <img 
                src={logo} 

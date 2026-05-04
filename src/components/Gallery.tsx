@@ -1,12 +1,14 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
-const IMAGES = [
-  'https://images.unsplash.com/photo-1606907568152-cb4dc11926c4?q=80&w=2574&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1549471013-3364d73206fb?q=80&w=2670&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1444464666168-49b626d49c61?q=80&w=2669&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1518992028580-14d528dc282c?q=80&w=2692&auto=format&fit=crop'
-];
+import img1 from '../images/Gallery/Rare bird sighting.jpg';
+import img2 from '../images/Gallery/Rare bird sighting 2.jpg';
+import img3 from '../images/Gallery/Rare bird sighting 3.jpg';
+import img4 from '../images/Gallery/Rare bird sighting 4.jpg';
+import img5 from '../images/Gallery/Rare bird sighting 5.avif';
+import img6 from '../images/Gallery/Rare bird sighting 6.avif';
+
+const IMAGES = [img1, img2, img3, img4, img5, img6];
 
 export default function Gallery() {
   const targetRef = useRef<HTMLDivElement>(null);

@@ -1,12 +1,16 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
+import imgGuacamalla from '../images/Expediciones/guacamalla.jpg';
+import imgAtitlan from '../images/Expediciones/Atitlan.jpg';
+import imgQuetzal from '../images/Expediciones/Quetzal.jpg';
+
 const EXPEDITIONS = [
   {
     id: 'peten',
     title: 'Reserva de la Biosfera Maya',
     subtitle: 'El Dominio del Jaguar y el Tucán',
-    image: 'https://images.unsplash.com/photo-1552728089-571ebd81c002?q=80&w=2670&auto=format&fit=crop', // Toucan placeholder
+    image: imgGuacamalla,
     description: 'Adéntrate en las profundidades de Petén. Observación en el dosel forestal junto a antiguos templos mayas.',
     days: '5 Días',
     birds: '350+ Especies'
@@ -15,7 +19,7 @@ const EXPEDITIONS = [
     id: 'atitlan',
     title: 'Tierras Altas y Atitlán',
     subtitle: 'Endemismo en Cumbres Volcánicas',
-    image: 'https://images.unsplash.com/photo-1580250645638-7fb8189c49a6?q=80&w=2670&auto=format&fit=crop', // Hummingbird placeholder
+    image: imgAtitlan,
     description: 'En busca del Pavo de Cacho y coloridos colibríes endémicos en los mágicos bosques nubosos del lago más hermoso del mundo.',
     days: '4 Días',
     birds: '200+ Especies'
@@ -24,7 +28,7 @@ const EXPEDITIONS = [
     id: 'bocas',
     title: 'Reserva Los Tarrales',
     subtitle: 'El Corredor del Quetzal',
-    image: 'https://images.unsplash.com/photo-1550853024-fae8cd4be47f?q=80&w=2670&auto=format&fit=crop', // Quetzal placeholder
+    image: imgQuetzal,
     description: 'Una inmersión exclusiva en la vertiente del Pacífico para observar al escurridizo Quetzal resplandeciente.',
     days: '3 Días',
     birds: '280+ Especies'
