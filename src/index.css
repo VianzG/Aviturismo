@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pine-green: #1B3022;
+  --color-sun-cream: #F9F7F2;
+  --color-charcoal-gray: #2C2C2C;
+  --color-moss-gold: #C5A059;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --animate-smooth-bounce: smooth-bounce 2s infinite alternate;
+
+  @keyframes smooth-bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(10px);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-moss-gold);
+  color: var(--color-sun-cream);
+}
+
